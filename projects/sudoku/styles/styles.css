@@ -23,6 +23,13 @@
     border: 1px #808080 solid;
 }
 
+.puzzle input::-webkit-outer-spin-button,
+.puzzle input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; 
+}
+
 .odd-section {
     background: #d3d3d3;
 }
