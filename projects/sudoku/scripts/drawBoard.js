@@ -7,15 +7,15 @@ export function drawInitialBoard() {
 
     for (let i = 0; i < squares; i++) {
         const inputElement = document.createElement("input")
-        
         inputElement.setAttribute("type", "number")
-        inputElement.setAttribute("oninput", "this.value=this.value.slice(0,this.maxLength)")
         inputElement.setAttribute("maxlength", "1")
+        inputElement.setAttribute("oninput", "this.value=this.value.slice(0,this.maxLength)")
+        inputElement.setAttribute("onkeyup", "if(value<1) value='';")
        
         if (darkSquare.includes(i)) {
             inputElement.classList.add("odd-section")
         }
         sudokuBoard.appendChild(inputElement)
     }
-    
 }
+
