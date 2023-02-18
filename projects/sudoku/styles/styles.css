@@ -1,8 +1,41 @@
+:root {
+  --font-body: Arial, Helvetica, sans-serif;
+  --font-headline: Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  /* colors */
+  --primary-color: #f0a868;
+  --secondary-color: blue;
+  --tertiary-color: #a4b8c4;
+  --light-grey: #d0d0d0;
+  --dark-grey: #303030;
+
+  /* sizes */
+  --font-base: 18px;
+  --small-font: 0.8em;
+  --large-font: 1.2em;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     border-spacing: 0;
+}
+
+button {
+  padding: 0.5em 2em;
+  background-color: var(--secondary-color);
+  color: white;
+  margin: 5px;
+  display: block;
+  border: 0;
+  border-radius: .35em;
+  font-size: var(--large-font);
+  cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    
 }
 
 .sudoku-solver {
@@ -33,3 +66,4 @@
 .odd-section {
     background: #d3d3d3;
 }
+
