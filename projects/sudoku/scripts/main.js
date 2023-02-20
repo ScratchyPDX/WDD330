@@ -1,4 +1,5 @@
 import { drawInitialBoard } from "./drawBoard.js";
+import populateBoard from "./populateBoard.js";
 import { insertValues, solve, populateValues } from "./solver.js";
 
 const solveButton = document.querySelector("#solve-button")
@@ -17,4 +18,6 @@ function main() {
     clearButton.addEventListener('click', () => window.location.reload(true))
 }
 
+const play = new populateBoard();
+play.init();
 main();
