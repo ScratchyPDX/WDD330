@@ -1,4 +1,5 @@
 import { getNewPuzzle } from "./externalServices.js";
+import { getRandomInt } from "./utils.js";
 
 export default class populateBoard {
 
@@ -23,13 +24,9 @@ export default class populateBoard {
     console.log("populateBoard: boardData: " + this.boardData);
     const inputs = document.querySelectorAll('input')
     inputs.forEach((input, i) => {
-      input.value = this.boardData[i];
+      if(this.boardData[i] != " ") {
+        input.value = this.boardData[i];
+      }
     });
   }  
-}
-
-function getRandomInt() {
-  const min = Math.ceil(0);
-  const max = Math.floor(2000);
-  return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
 }
