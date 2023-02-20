@@ -20,6 +20,7 @@ export async function getNewPuzzle(seed, difficulty = "easy") {
 }
 
 export async function getPuzzleSolution(board) {
+  console.log("getPuzzleSolution: board: " + board);
   let solution = "";
   const options = {
       method: "GET",
@@ -28,8 +29,9 @@ export async function getPuzzleSolution(board) {
         "X-RapidAPI-Host": `${apiHost}`
         }
   };
-  
-  await fetch(`${baseUrl}/solve?puzzle=${board.replaceAll(" ", ".")}`, options)
+  console.log("getPuzzleSolution: board.toString(): " + board.toString());
+  console.log("getPuzzleSolution: board.toString().replaceAll: " + board.toString().replaceAll(",", "").replaceAll(" ", "."));
+  await fetch(`${baseUrl}/solve?puzzle=${board.toString().replaceAll(",", "").replaceAll(" ", ".")}`, options)
     .then(response => response.json())
     .then(response => solution = response.solution)
     .catch(err => console.error(err));
